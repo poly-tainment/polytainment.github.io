@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games - polytainment</title>
+  <link rel="stylesheet" href="src/styles.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <nav>
+    <button id="toggle-sidebar"><i data-feather="chevron-left"></i></button>
+    <a href="index.html"><i data-feather="home"></i></a>
+    <a href="gm.html"><i data-feather="crosshair"></i></a>
+  </nav>
+
+  <header>
+    <h1>polytainment</h1>
+    <p>all unblocked games</p>
+  </header>
+
+  <div class="game-search-container">
+    <form id="game-search-form">
+      <input type="text" id="gameSearchInput" placeholder="Search games..." />
+    </form>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+      <div class="game-card">
+        <img src="games/2048/2048.png" alt="2048">
+        <h2>2048</h2>
+        <a href="games/2048/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/among-us/red.png" alt="Among Us">
+        <h2>Among Us</h2>
+        <a href="games/among-us/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/badparenting/splash.jpg" alt="Bad Parenting">
+        <h2>Bad Parenting</h2>
+        <a href="games/badparenting/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/baldis-basics/splash.png" alt="Baldis Basics">
+        <h2>Baldis Basics</h2>
+        <a href="games/baldis-basics/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/basket-random/splash.jpeg" alt="Basket Random">
+        <h2>Basket Random</h2>
+        <a href="games/basket-random/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/bitlife/splash.png" alt="Bitlife">
+        <h2>Bitlife</h2>
+        <a href="games/bitlife/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/blockblast/TemplateData/favicon.ico" alt="Block Blast">
+        <h2>Block Blast</h2>
+        <a href="games/blockblast/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/buckshot/splash.png" alt="Buckshot Roulette">
+        <h2>Buckshot Roulette</h2>
+        <a href="games/buckshot/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/cc3d/splash.png" alt="Crazy Cattle 3D">
+        <h2>Crazy Cattle 3D</h2>
+        <a href="games/cc3d/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/bowmasters/splash.png" alt="Bowmasters">
+        <h2>Bowmasters</h2>
+        <a href="games/bowmasters/index.html">Play Now</a>
+      </div>
+      <div class="game-card">
+        <img src="games/gpt/splash.png" alt="Chat GPT">
+        <h2>Chat GPT (gn-math's)</h2>
+        <a href="games/gpt/index.html">Play Now</a>
+      </div>
+        <div class="game-card">
+        <img src="games/escaperoad2/splash.png" alt="Escape Roads">
+        <h2>Escape Roads 2</h2>
+        <a href="games/escaperoad2/index.html">Play Now</a>
+      </div>
+        <div class="game-card">
+        <img src="games/repo/splash.png" alt="REPO">
+        <h2>R.E.P.O</h2>
+        <a href="games/repo/index.html">Play Now</a>
+      </div>
+        <div class="game-card">
+        <img src="games/wordle/splash.png" alt="Wordle">
+        <h2>Wordle</h2>
+        <a href="games/wordle/index.html">Play Now</a>
+      </div>
+        <div class="game-card">
+        <img src="games/superhot/splash.png" alt="SUPERHOT">
+        <h2>SUPERHOT</h2>
+        <a href="games/superhot/index.html">Play Now</a>
+    </div>
+  </div>
+
+  <script>
+    feather.replace();
+
+    document.getElementById("toggle-sidebar").addEventListener("click", () => {
+      document.querySelector("nav").classList.toggle("collapsed");
+      document.querySelector("header").classList.toggle("collapsed");
+      document.querySelector(".game-search-container").classList.toggle("collapsed");
+    });
+
+    document.getElementById("gameSearchInput").addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      const cards = document.querySelectorAll(".game-card");
+
+      cards.forEach(card => {
+        const title = card.getAttribute("data-title").toLowerCase();
+        card.style.display = title.includes(query) ? "flex" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
