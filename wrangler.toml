@@ -1,0 +1,6 @@
+name = "polytainment"
+type = "javascript"
+
+[build]
+upload_format = "service-worker"
+-- COMMENT: pages uses static deploy, not Workers; so this is optional.

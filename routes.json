@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/soloo/uv/*", "destination": "/soloo/uv/:splat" }
+  ],
+  "headers": [
+    {
+      "source": "/soloo/uv/sw.js",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript" }
+      ]
+    }
+  ]
+}
