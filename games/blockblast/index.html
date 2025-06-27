@@ -1,161 +1,230 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5221630201042895"
-     crossorigin="anonymous"></script>
-
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CC4ZKKC8EF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CC4ZKKC8EF');
-
-  let displayMode = 'browser';
-  let isPwa = false;
-  const mqStandAlone = '(display-mode: fullscreen)';
-  if (navigator.standalone || window.matchMedia(mqStandAlone).matches) {
-    displayMode = 'fullscreen';
-    isPwa = true
-  }
-  gtag('event', 'pwa_check', {'pwa': isPwa});
-
-//<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-</script>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
-    <title>Block Blast Puzzle</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="manifest" href="manifest.webmanifest">
-  </head>
-  <body>
-    <div id="unity-container">
-      <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
+<head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-WX5VS54ZDW');
+  </script>
+  <script>
+    let displayMode = 'browser';
+    let isPwa = false;
+    const mqStandAlone = '(display-mode: fullscreen)';
+    if (navigator.standalone || window.matchMedia(mqStandAlone).matches) {
+      displayMode = 'fullscreen';
+      isPwa = true
+    }
+    gtag('event', 'pwa_check', {'pwa': isPwa});
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Block Blast Puzzle</title>
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/genizy/bl/TemplateData/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/genizy/bl/TemplateData/style.css">
+  <link rel="manifest" href="https://cdn.jsdelivr.net/gh/genizy/bl/manifest.webmanifest">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #credit {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-family: sans-serif;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.2);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 10px;
+      z-index: 9999;
+      white-space: nowrap;
+      display: none;
+    }
+    #credit a {
+      color: #ff79c6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #credit a:hover {
+      text-decoration: underline;
+    }
+    .bounce-text span {
+      display: inline-block;
+      animation: bounce 1s infinite ease-in-out;
+    }
+    .bounce-text span:nth-child(n) {
+      animation-delay: calc(var(--i) * 0.05s);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+    #loading-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #loading-gif {
+      width: 300px;
+      height: auto;
+      margin-bottom: 30px;
+      border-radius: 12px;
+    }
+    #loading-bar-container {
+      width: 400px;
+      height: 25px;
+      background: #333;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    #loading-bar-fill {
+      height: 100%;
+      background: #ff4444;
+      width: 0%;
+    }
+    @keyframes fillBar {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading-screen">
+    <img id="loading-gif" src="https://i.ibb.co/4wxjTZw2/gifsolosfaceoc-1.gif" alt="Loading..." />
+    <div id="loading-bar-container">
+      <div id="loading-bar-fill"></div>
     </div>
+  </div>
 
-    <script>
-      window.addEventListener("load", function () {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js");
-        }
+  <div id="credit" class="bounce-text">
+    <span style="--i:0">p</span><span style="--i:1">o</span><span style="--i:2">r</span><span style="--i:3">t</span><span style="--i:4"> </span>
+    <span style="--i:5">b</span><span style="--i:6">y</span><span style="--i:7"> </span>
+    <a href="https://soloo.fun/" target="_blank">
+      <span style="--i:8">s</span><span style="--i:9">o</span><span style="--i:10">l</span><span style="--i:11">o</span><span style="--i:12">o</span>
+    </a>
+    <span style="--i:13"> </span><span style="--i:14">&lt;</span><span style="--i:15">3</span>
+  </div>
+
+  <div id="unity-container">
+    <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
+    <div id="unity-loading-bar">
+      <div id="unity-logo"></div>
+      <div id="unity-progress-bar-empty">
+        <div id="unity-progress-bar-full"></div>
+      </div>
+    </div>
+    <div id="unity-warning"> </div>
+  </div>
+
+  <script>
+    var fill = document.getElementById("loading-bar-fill");
+    var credit = document.getElementById("credit");
+    var loadingScreen = document.getElementById("loading-screen");
+    fill.style.animation = "fillBar 4s linear forwards";
+    setTimeout(() => {
+      loadingScreen.classList.add("fade-out");
+      credit.style.display = "block";
+    }, 4000);
+    window.addEventListener("load", function () {
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("https://cdn.jsdelivr.net/gh/genizy/bl/ServiceWorker.js");
+      }
+    });
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+    var progressBarFull = document.querySelector("#unity-progress-bar-full");
+    var warningBanner = document.querySelector("#unity-warning");
+    function unityShowBanner(msg, type) {
+      function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+      }
+      var div = document.createElement('div');
+      div.innerHTML = msg;
+      warningBanner.appendChild(div);
+      if (type == 'error') div.style = 'background: red; padding: 10px;';
+      else {
+        if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+        setTimeout(function() {
+          warningBanner.removeChild(div);
+          updateBannerVisibility();
+        }, 5000);
+      }
+      updateBannerVisibility();
+    }
+    var buildUrl = "https://cdn.jsdelivr.net/gh/genizy/bl/Build";
+    var loaderUrl = buildUrl + "/BlockBlast1.1-8.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/BlockBlast1.1-8.data.unityweb",
+      frameworkUrl: buildUrl + "/BlockBlast1.1-8.framework.js.unityweb",
+      codeUrl: buildUrl + "/BlockBlast1.1-8.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "reun",
+      productName: "Block Blast Puzzle",
+      productVersion: "1.1",
+      showBanner: unityShowBanner,
+    };
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+      document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+    loadingBar.style.display = "block";
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = 100 * progress + "%";
+      }).then((unityInstance) => {
+        loadingBar.style.display = "none";
+      }).catch((message) => {
+        alert(message);
       });
+    };
+    document.body.appendChild(script);
+  </script>
 
-	//  window.addEventListener("orientationchange", function () {
-	// 	var orientation = window.orientation;
-
-	// 	if (orientation === 90 || orientation === -90) 
-	// 	{
-	// 		alert("Landscape orientation is not supported");
-
-	// 		setTimeout(function () {
-	// 			window.screen.orientation.lock("portrait-primary");
-	// 		}, 100);
-	// 	}
-	// });
-
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var warningBanner = document.querySelector("#unity-warning");
-
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
-	 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/BlockBlast1.1-8.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/BlockBlast1.1-8.data.unityweb",
-        frameworkUrl: buildUrl + "/BlockBlast1.1-8.framework.js.unityweb",
-        codeUrl: buildUrl + "/BlockBlast1.1-8.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "reun",
-        productName: "Block Blast Puzzle",
-        productVersion: "1.1",
-        showBanner: unityShowBanner,
-      };
-
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-      }
-
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5221630201042895"
-crossorigin="anonymous"></script>
-<!-- Banner test -->
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-5221630201042895"
-data-ad-slot="3988294629"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-  </body>
+  <script type="text/javascript" src="//pl27018725.profitableratecpm.com/d0/fe/d8/d0fed844ac39452ad6e39f1e660b5980.js"></script>
+  <script type="text/javascript">
+    atOptions = {
+      'key' : 'ca189271fc818c84bcfa146bb8a78e0c',
+      'format' : 'iframe',
+      'height' : 300,
+      'width' : 160,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/ca189271fc818c84bcfa146bb8a78e0c/invoke.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5221630201042895" crossorigin="anonymous"></script>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5221630201042895" data-ad-slot="3988294629" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <script type='text/javascript' src='//greetingsdaydreamlitre.com/40/a6/d2/40a6d2f3a356c3fd7536c50762f5f993.js'></script>
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '19fe9bb8d84dff8ae66cfc421fd8f737',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="//greetingsdaydreamlitre.com/19fe9bb8d84dff8ae66cfc421fd8f737/invoke.js"></script>
+</body>
 </html>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WLTG1S4STB');
-</script>
