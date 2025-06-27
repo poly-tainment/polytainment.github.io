@@ -3,13 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>polytainment</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="src/styles.css" />
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-  <script src="/femboys/uv/uv.bundle.js" defer></script>
-  <script src="/femboys/uv/uv.config.js" defer></script>
+  <script src="/soloo/uv/uv.bundle.js" defer></script>
+  <script src="/soloo/uv/uv.config.js" defer></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f4e3;
+      color: #5a5343;
+      min-height: 100vh;
+      font-size: 14px;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(242, 234, 210, 0.9);
+      backdrop-filter: blur(8px);
+      border-right: 1px solid #e1c69920;
+      box-shadow: 4px 0 12px rgba(225, 198, 153, 0.05);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 75px;
+      z-index: 1000;
+      transition: width 0.3s ease;
+      padding-top: 1rem;
+    }
+
+    nav.collapsed {
+      width: 30px;
+    }
+
+    nav a, #toggle-sidebar {
+      color: #8a7f6d;
+      text-decoration: none;
+      font-size: 2rem;
+      margin: 1.5rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #d4a373;
+      transform: scale(1.1);
+    }
+
+    header {
+      background: #f8f4e3;
+      padding: 2rem 1rem 1rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid #e1c699;
+      box-shadow: 0 0 15px rgba(225, 198, 153, 0.2);
+      z-index: 1;
+      position: relative;
+      margin-left: 120px;
+      transition: margin-left 0.3s ease;
+    }
+
+    nav.collapsed + header {
+      margin-left: 50px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #d4a373;
+      letter-spacing: 1px;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #8a7f6d;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 120px;
+      height: 70vh;
+      position: relative;
+      z-index: 2;
+      transition: margin-left 0.3s ease;
+    }
+
+    nav.collapsed ~ .search-container {
+      margin-left: 50px;
+    }
+
+    .search-container input[type="text"] {
+      width: 100%;
+      max-width: 600px;
+      padding: 1.2rem 1.5rem;
+      font-size: 1.2rem;
+      border: 1px solid #e1c699;
+      border-radius: 12px;
+      background: #f0e9d5;
+      color: #5a5343;
+      box-shadow: 0 0 12px rgba(225, 198, 153, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .search-container button {
+      margin-left: 10px;
+      padding: 1.2rem 1.5rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      background: #d4a373;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .search-container button:hover {
+      background: #c08e60;
+    }
+  </style>
 </head>
 <body>
 
@@ -25,24 +152,30 @@
   </header>
 
   <div class="search-container">
-    <form id="uv-form">
-            <input id="uv-search-engine" value="https://opnxng.com/search?q=" type="hidden"/> 
-            <input id="uv-address" type="text" placeholder="search" />
-    </form>
+    <input id="uv-address" type="text" placeholder="Search or enter URL..." />
+    <button id="go-btn">Go</button>
   </div>
+
+
+  <script type='text/javascript' src='//greetingsdaydreamlitre.com/40/a6/d2/40a6d2f3a356c3fd7536c50762f5f'></script>
 
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       feather.replace();
 
-      const form = document.getElementById("uv-form");
-      const input = document.getElementById("searchInput");
+      const input = document.getElementById("uv-address");
+      const button = document.getElementById("go-btn");
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const url = input.value.trim();
-        if (!url) return;
-        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+      function go() {
+        const raw = input.value.trim();
+        if (!raw) return;
+        const encoded = encodeURIComponent(raw);
+        window.location.href = `soloo.html?q=${encoded}`;
+      }
+
+      button.addEventListener("click", go);
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") go();
       });
 
       document.getElementById("toggle-sidebar").addEventListener("click", () => {
@@ -51,12 +184,12 @@
     });
   </script>
 
-    <script src="/src/script.js" defer></script>
-    <script src="/soloo/uv/uv.bundle.js" defer></script>
-    <script src="/soloo/uv/uv.config.js" defer></script>
-    <script src="/soloo/register-sw.js" defer></script>
-    <script src="/soloo/search.js" defer></script>
-    <script src="/soloo/index.js" defer></script>
-    <script src="/soloo/error.js" defer></script>
+  <script src="/src/script.js" defer></script>
+  <script src="/soloo/uv/uv.bundle.js" defer></script>
+  <script src="/soloo/uv/uv.config.js" defer></script>
+  <script src="/soloo/register-sw.js" defer></script>
+  <script src="/soloo/search.js" defer></script>
+  <script src="/soloo/index.js" defer></script>
+  <script src="/soloo/error.js" defer></script>
 </body>
 </html>
