@@ -1,0 +1,11 @@
+{
+  "name": "polytainment-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "worker.js",
+  "dependencies": {
+    "@mercuryworkshop/bare-mux": "^2.0.4",
+    "idb": "^7.1.1",
+    "set-cookie-parser": "^2.6.0"
+  }
+}
