@@ -1,0 +1,2 @@
+echo booting poly games 
+npm install && npm start

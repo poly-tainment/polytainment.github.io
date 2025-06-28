@@ -2,9 +2,9 @@
   "name": "polytainment-server",
   "version": "1.0.0",
   "type": "module",
-  "main": "scripts/start.js",
+  "main": "start.js",
   "scripts": {
-    "start": "node scripts/start.js"
+    "start": "node start.js"
   },
   "dependencies": {
     "express": "^4.19.2",
