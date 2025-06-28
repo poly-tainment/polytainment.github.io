@@ -1,13 +1,13 @@
 {
-  "name": "polytainment-worker",
+  "name": "polytainment-server",
   "version": "1.0.0",
   "type": "module",
-  "main": "worker.js",
+  "main": "scripts/start.js",
   "scripts": {
-    "start": "wrangler dev"
+    "start": "node scripts/start.js"
   },
   "dependencies": {
-    "@mercuryworkshop/bare-mux": "^2.0.4",
+    "express": "^4.19.2",
     "idb": "^7.1.1",
     "set-cookie-parser": "^2.6.0"
   },
