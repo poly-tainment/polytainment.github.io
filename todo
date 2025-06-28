@@ -1,8 +1,0 @@
-1. delete everything execpt /games and .html files and .css files  (also dont delete /scripts, ads.txt, and cname)
-2. move it all into /public (execpt /scripts, ads.txt, and cname)
-3. take a deep breth
-4. in /public make /_a/data/games the games dir 
-5. in /public /_a/img img, do the same for /_a/css and /_a/js
-6. fix paths for html files
-
-notes : do this 1st in batches of seperate commits, we add other stuff after, also i alr did backend with package.json and scripts
