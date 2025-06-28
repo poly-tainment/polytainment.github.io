@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "type": "module",
   "main": "worker.js",
+  "scripts": {
+    "start": "wrangler dev"
+  },
   "dependencies": {
     "@mercuryworkshop/bare-mux": "^2.0.4",
     "idb": "^7.1.1",
     "set-cookie-parser": "^2.6.0"
-  }
+  },
+  "devDependencies": {}
 }
