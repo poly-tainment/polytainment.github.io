@@ -1,0 +1,57 @@
+body {
+    background: #e0f7fa; 
+    color: #004d40; 
+}
+
+nav {
+    background: rgba(224, 242, 241, 0.9); 
+}
+
+nav a {
+    color: #00796b; 
+}
+
+nav a:hover {
+    color: #004d40; 
+}
+
+header {
+    background: #e0f7fa; 
+}
+
+header h1 {
+    color: #00796b; 
+}
+
+header p {
+    color: #004d40; 
+}
+
+.search-container input[type="text"] {
+    border: 1px solid #00796b; 
+    background: #b2ebf2; 
+    color: #004d40; 
+}
+
+.game-search-container input[type="text"] {
+    border-color: #00796b; 
+    background: #b2ebf2; 
+    color: #004d40; 
+}
+
+.game-card {
+    background: #b2ebf2; 
+    border-color: #004d40; 
+}
+
+.game-card h2 {
+    color: #00796b; 
+}
+
+.game-card a {
+    color: #00796b; 
+}
+
+.game-card a:hover {
+    background: rgba(0, 121, 107, 0.1); 
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="/_a/styles/styles.css" />
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
   <nav id="sidebar">
     <button id="toggle-sidebar"><i data-feather="chevron-left"></i></button>
@@ -23,12 +25,20 @@
     <input id="search" type="text" placeholder="Search or enter URL..." />
     <button id="go">Go</button>
   </div>
-
+  <div style="display: flex; justify-content: flex-end; margin-bottom: 5px; margin-right: 20px;">
+    <select id="themeSelect" onChange="changeTheme(this.value);" style="padding: 5px; font-size: 16px;">
+      <option value="tangerine.css">tangerine</option>
+      <option value="charcoal.css">charcoal</option>
+      <option value="mint.css">mint</option>
+      <option value="jungle.css">jungle</option>
+      <option value="none.css">none</option>
+    </select>
+  </div>
   <script>
     feather.replace();
     document.getElementById('go').onclick = navigate;
-    document.getElementById('search').onkeydown = e => { if (e.key==="Enter") navigate() };
-    function navigate(){
+    document.getElementById('search').onkeydown = e => { if (e.key === "Enter") navigate() };
+    function navigate() {
       const val = document.getElementById('search').value.trim();
       if (val) window.location.href = `soloo.html?q=${encodeURIComponent(val)}`;
     }
@@ -36,5 +46,8 @@
       document.getElementById('sidebar').classList.toggle('collapsed');
     };
   </script>
+  <script src="/_a/styles/themes.js"></script>
+
 </body>
+
 </html>

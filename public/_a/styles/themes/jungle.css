@@ -1,0 +1,81 @@
+body {
+    background: #121913;
+    color: #d2e0d2;
+}
+
+nav {
+    background: rgba(20, 30, 20, 0.95);
+    border-right: 1px solid #2e3c2e;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+    color: #a4c3a4;
+}
+
+nav a:hover {
+    color: #b9e28c;
+}
+
+#toggle-sidebar {
+    color: #a4c3a4;
+}
+
+header {
+    background: #121913;
+}
+
+header h1 {
+    color: #b9e28c;
+}
+
+header p {
+    color: #a4c3a4;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.2rem;
+    border: 1px solid #2e3c2e;
+    border-radius: 12px;
+    background: #1a261a;
+    color: #d2e0d2;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.game-search-container input[type="text"] {
+    border-color: #2e3c2e;
+    border-radius: 10px;
+    background: #1a261a;
+    color: #d2e0d2;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.game-search-container input[type="text"]:focus {
+    outline: none;
+    border-color: #b9e28c;
+}
+
+.game-card {
+    background: #1a261a;
+    border-color: #2e3c2e;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.game-card img {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.game-card h2 {
+    color: #b9e28c;
+}
+
+.game-card a {
+    color: #b9e28c;
+    border-color: #b9e28c;
+}
+
+.game-card a:hover {
+    background: rgba(185, 226, 140, 0.1);
+}

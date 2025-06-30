@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +7,6 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f8f4e3;
-  color: #5a5343;
   min-height: 100vh;
   font-size: 14px;
   overflow-x: hidden;
@@ -17,10 +16,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(242, 234, 210, 0.9);
   backdrop-filter: blur(8px);
-  border-right: 1px solid #e1c69920;
-  box-shadow: 4px 0 12px rgba(225, 198, 153, 0.05);
   position: fixed;
   top: 0;
   left: 0;
@@ -36,7 +32,6 @@ nav.collapsed {
 }
 
 nav a {
-  color: #8a7f6d;
   text-decoration: none;
   font-size: 2rem;
   margin: 1.5rem 0;
@@ -44,7 +39,6 @@ nav a {
 }
 
 nav a:hover {
-  color: #d4a373;
   transform: scale(1.1);
 }
 
@@ -53,37 +47,31 @@ nav a:hover {
   border: none;
   margin-bottom: 2rem;
   cursor: pointer;
-  color: #8a7f6d;
   font-size: 1.6rem;
 }
 
 
 header {
-  background: #f8f4e3;
   padding: 2rem 1rem 1rem 1rem;
   text-align: center;
-  border-bottom: 2px solid #e1c699;
-  box-shadow: 0 0 15px rgba(225, 198, 153, 0.2);
   z-index: 1;
   position: relative;
   margin-left: 120px;
   transition: margin-left 0.3s ease;
 }
 
-nav.collapsed + header {
+nav.collapsed+header {
   margin-left: 50px;
 }
 
 header h1 {
   font-size: 2.5rem;
-  color: #d4a373;
   letter-spacing: 1px;
   margin-bottom: 0.25rem;
 }
 
 header p {
   font-size: 1rem;
-  color: #8a7f6d;
 }
 
 
@@ -98,7 +86,7 @@ header p {
   transition: margin-left 0.3s ease;
 }
 
-nav.collapsed ~ .search-container {
+nav.collapsed~.search-container {
   margin-left: 50px;
 }
 
@@ -113,11 +101,7 @@ nav.collapsed ~ .search-container {
   width: 100%;
   padding: 1.2rem 1.5rem;
   font-size: 1.2rem;
-  border: 1px solid #e1c699;
   border-radius: 12px;
-  background: #f0e9d5;
-  color: #5a5343;
-  box-shadow: 0 0 12px rgba(225, 198, 153, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -130,7 +114,7 @@ nav.collapsed ~ .search-container {
   transition: margin-left 0.3s ease;
 }
 
-nav.collapsed ~ .game-search-container {
+nav.collapsed~.game-search-container {
   margin-left: 50px;
 }
 
@@ -145,18 +129,12 @@ nav.collapsed ~ .game-search-container {
   width: 100%;
   padding: 1rem 1.2rem;
   font-size: 1.1rem;
-  border: 1px solid #e1c699;
   border-radius: 10px;
-  background: #f0e9d5;
-  color: #5a5343;
-  box-shadow: 0 0 8px rgba(225, 198, 153, 0.1);
   transition: all 0.3s ease;
 }
 
 .game-search-container input[type="text"]:focus {
   outline: none;
-  border-color: #d4a373;
-  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
 }
 
 .container {
@@ -168,7 +146,7 @@ nav.collapsed ~ .game-search-container {
   transition: margin-left 0.3s ease;
 }
 
-nav.collapsed ~ .container {
+nav.collapsed~.container {
   margin-left: 70px;
 }
 
@@ -181,11 +159,9 @@ nav.collapsed ~ .container {
 }
 
 .game-card {
-  background: #f0e9d5;
-  border: 1px solid #e1c69925;
+  border: 1px solid;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 0 8px rgba(225, 198, 153, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -198,26 +174,19 @@ nav.collapsed ~ .container {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.75rem;
-  box-shadow: 0 0 10px rgba(225, 198, 153, 0.1);
 }
 
 .game-card h2 {
   font-size: 1.1rem;
-  color: #d4a373;
   margin-bottom: 0.5rem;
 }
 
 .game-card a {
-  color: #d4a373;
   font-weight: bold;
   text-decoration: none;
   font-size: 0.9rem;
   padding: 0.4rem 0.6rem;
-  border: 1px solid #d4a373;
+  border: 1px solid;
   border-radius: 6px;
   transition: background 0.2s ease;
-}
-
-.game-card a:hover {
-  background: rgba(212, 163, 115, 0.1);
 }
