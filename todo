@@ -1,0 +1,9 @@
+put /x/ then the current date, time, timezone and name before somthing to show youve done it.
+
+| make a bare server host in /bare 
+| impliment scramjet
+| make homepage a sort of dashboard
+| make seperate browser page
+| put games into a json file
+| use javascript+json array for the sidebar instead of pure html
+| make devs page.

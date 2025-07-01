@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node start.js"
   },
+  "engines": {
+    "node": ">=16"
+  },
   "dependencies": {
     "express": "^4.19.2",
     "idb": "^7.1.1",

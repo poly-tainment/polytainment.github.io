@@ -35,16 +35,7 @@
     </select>
   </div>
   <script>
-    feather.replace();
-    document.getElementById('go').onclick = navigate;
-    document.getElementById('search').onkeydown = e => { if (e.key === "Enter") navigate() };
-    function navigate() {
-      const val = document.getElementById('search').value.trim();
-      if (val) window.location.href = `soloo.html?q=${encodeURIComponent(val)}`;
-    }
-    document.getElementById('toggle-sidebar').onclick = () => {
-      document.getElementById('sidebar').classList.toggle('collapsed');
-    };
+// remove useless javascript
   </script>
   <script src="/_a/styles/themes.js"></script>
 
