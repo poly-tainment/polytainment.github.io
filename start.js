@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import http from 'http';
 import { fileURLToPath } from 'url';
-import { createBareServer } from 'https://esm.sh/@tomphttp/bare-server-node';
+import { createBareServer } from '@tomphttp/bare-server-node';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 const server = http.createServer(app);
 
-const bare = createBareServer('/bare');
+const bare = createBareServer('/bare/');
 server.on('request', (req, res) => {
   if (bare.shouldRoute(req)) {
     bare.routeRequest(req, res);

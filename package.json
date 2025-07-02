@@ -10,9 +10,9 @@
     "node": ">=16"
   },
   "dependencies": {
+    "@tomphttp/bare-server-node": "^2.0.5",
     "express": "^4.19.2",
     "idb": "^7.1.1",
     "set-cookie-parser": "^2.6.0"
-  },
-  "devDependencies": {}
+  }
 }
