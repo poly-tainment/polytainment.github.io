@@ -22,7 +22,7 @@ server.on('request', (req, res) => {
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, 'public', '_a', '404', '404.html'));
+  res.status(404).sendFile(path.join(__dirname, 'public', '_a', '404', 'index.html'));
 });
 
 server.listen(PORT, () => {
